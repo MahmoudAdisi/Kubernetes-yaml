@@ -1,0 +1,21 @@
+
+apiVersion: apps/v1 
+kind: ReplicaSet
+metadata:
+  name: nodrep
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      env: grop1
+      tier: col 
+  template:
+    metadata:
+      name: pod-mod
+      labels:
+        env: grop1
+        tier: col 
+    spec:
+      containers:
+        - name: nginx
+          image: nginx
