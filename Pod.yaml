@@ -2,9 +2,11 @@ apiVersion: v1
 kind: Pod 
 metadeta: 
   name: dpring-pod
+  labels:
+        env: grop1
+        tier: col 
 spec:
-  -name: nginx
-  image: nginx:1.27.4
-  ports:
-    -containerPod:80
+  - name: nginx
+    image: nginx:1.27.4
+
 

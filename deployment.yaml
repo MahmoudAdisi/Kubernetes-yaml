@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deploy
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      env: grop1
+      tier: col
+  template: 
+    metadeta: 
+      labels:
+        env: grop1
+        tier: col 
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:1.27.4
