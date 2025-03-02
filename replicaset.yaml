@@ -7,14 +7,12 @@ spec:
   replicas: 5
   selector:
     matchLabels:
-      env: grop1
-      tier: col 
+      env: grop1 
   template:
     metadata:
       name: pod-mod
       labels:
         env: grop1
-        tier: col 
     spec:
       containers:
         - name: nginx

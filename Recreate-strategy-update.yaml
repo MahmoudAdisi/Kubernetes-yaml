@@ -1,19 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: deploy-adisi
+  name: rec-str-up
 spec:
-  replicas: 3
+  replicas: 8
   selector:
     matchLabels:
       env: grop1
-  template: 
+  strategy:
+    type: Recreate
+  template:
     metadata:
+      name: Adisi
       labels:
         env: grop1
     spec:
       containers:
-        - name: simple-webserver
-          image: menamagdyhalem/simple-webserver
-          ports:
-            - containerPort: 3000
+        - name: nginx
+          image: nginx
