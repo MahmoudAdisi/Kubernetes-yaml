@@ -1,0 +1,13 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: adisi-Job
+spec:
+  template:
+    spec:
+      containers:
+      - name: alpine 
+        image: alpine
+        command: ["echo",  "Hello from Adisi"]
+      restartPolicy: Never
+  backoffLimit: 4
